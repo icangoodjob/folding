@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html',{
+	"title":"Главная страница"
+})
+<body>
+
+	<div class="wrapper">
+
+		@@include('html/header.html',{})
+
+		<main class="main">
+			<!-- Получение содержимого тегов из json файла с помощью @@loop -->
+			<!-- @@loop("html/news-item.html", "../data/news.json") -->
+			<section class="home">
+				<div class="home__container">
+					<div class="home__body">
+						<div class="home__info">
+							<h1 class="home__title">
+								<span class="text-yellow">Раздвижные конструкции</span> с&nbsp;высоким уровнем <span class="_icon-sound">звуко&shy;изоляции</span>
+							</h1>
+							<ul class="home__list">
+								<li class="home__item">Собственное производство в России</li>
+								<li class="home__item">Уровень вукоизоляции до 52 дБ</li>
+								<li class="home__item">Расчит проекта по вашим требованиям за 1 час</li>
+								<li class="home__item">Гарантия на продукцию 3 года</li>
+								<li class="home__item">Работа “под ключ”</li>
+							</ul>
+							<a href="#" class="home__button orange-button _icon-plus-minus">Получить рассчет проекта</a>
+						</div>
+						<div class="home__images images-home">
+							<div class="images-home__row">
+								<div class="images-home__item images-home__item_big">
+									<img src="img/home/1.jpg" alt="">
+								</div>
+								<div class="images-home__item images-home__item_long">
+									<img src="img/home/2.jpg" alt="">
+								</div>
+								<div class="images-home__item images-home__item_min">
+									<img src="img/home/3.jpg" alt="">
+								</div>
+								<div class="images-home__item images-home__item_min2">
+									<img src="img/home/4.jpg" alt="">
+								</div>
+								<div class="images-home__item images-home__item_middle">
+									<img src="img/home/5.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="types">
+				<div class="types__container">
+					<div class="types__body">
+						<a href="#" class="types__item item-types">
+							<div class="item-types__img">
+								<img src="img/types/1.jpg" alt="">
+							</div>
+							<div class="item-types__body">
+								<div class="item-types__content">
+									<div class="item-types__info">
+										<h2 class="item-types__title">Раздвижные стены</h2>
+										<ul class="item-types__list">
+											<li>от 18 000 ₽/м²</li>
+											<li>2 бренда</li>
+											<li>7 типов конструкций</li>
+										</ul>
+									</div>
+									<div class="item-types__arrow _icon-arrow-right"></div>
+								</div>
+							</div>
+						</a>
+						<a href="#" class="types__item item-types">
+							<div class="item-types__img">
+								<img src="img/types/2.jpg" alt="">
+							</div>
+							<div class="item-types__body">
+								<div class="item-types__content">
+									<div class="item-types__info">
+										<h2 class="item-types__title">Раздвижные перегородки</h2>
+										<ul class="item-types__list">
+											<li>от 22 000 ₽/м²</li>
+											<li>3 бренда</li>
+											<li>11 типов конструкций</li>
+										</ul>
+									</div>
+									<div class="item-types__arrow _icon-arrow-right"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</section>
+			<section class="advantages">
+				<div class="advantages__container">
+					<div class="advantages__header">
+						<h2 class="advantages__title common-title">
+							Разделите любое помещение на “до и после”
+						</h2>
+						<div class="advantages__subtitle">
+							Современные и практичные раздвижные перегородки компании ФОЛДИН не требуют перепланировки помещения, получения разрешительных документов и выполнения сложных строительных работ. 
+						</div>
+					</div>
+					<div class="advantages__body">
+						<div class="advantages__item item-advantages">
+							<div class="item-advantages__icon">
+								<img src="img/advantages/icon-1.svg" alt="">
+							</div>
+							<div class="item-advantages__content">
+								<div class="item-advantages__number">
+									<span class="item-advantages__quantity">18</span>
+									<span class="item-advantages__label">лет</span>
+								</div>
+								<div class="item-advantages__text item-advantages__text_18">
+									работы на&nbsp;рынке
+								</div>
+							</div>
+						</div>
+						<div class="advantages__item item-advantages">
+							<div class="item-advantages__icon">
+								<img src="img/advantages/icon-2.svg" alt="">
+							</div>
+							<div class="item-advantages__content">
+								<div class="item-advantages__number">
+									<span class="item-advantages__quantity">8</span>
+									<span class="item-advantages__label">лет</span>
+								</div>
+								<div class="item-advantages__text item-advantages__text_8">
+									собственному производству
+								</div>
+							</div>
+						</div>
+						<div class="advantages__item item-advantages">
+							<div class="item-advantages__icon">
+								<img src="img/advantages/icon-3.svg" alt="">
+							</div>
+							<div class="item-advantages__content">
+								<div class="item-advantages__number">
+									<span class="item-advantages__quantity">62</span>
+								</div>
+								<div class="item-advantages__text item-advantages__text_62">
+									высококлассных сотрудника
+								</div>
+							</div>
+						</div>
+						<div class="advantages__item item-advantages">
+							<div class="item-advantages__icon">
+								<img src="img/advantages/icon-4.svg" alt="">
+							</div>
+							<div class="item-advantages__content">
+								<div class="item-advantages__number">
+									<span class="item-advantages__quantity">12</span>
+								</div>
+								<div class="item-advantages__text item-advantages__text_12">
+									запатентованных разработок
+								</div>
+							</div>
+						</div>
+						<div class="advantages__item item-advantages">
+							<div class="item-advantages__icon">
+								<img src="img/advantages/icon-5.svg" alt="">
+							</div>
+							<div class="item-advantages__content">
+								<div class="item-advantages__number">
+									<span class="item-advantages__quantity">400</span>
+								</div>
+								<div class="item-advantages__text item-advantages__text_400">
+									производимых панелей&nbsp;в&nbsp;месяц
+								</div>
+							</div>
+						</div>
+						<div class="advantages__item item-advantages">
+							<div class="item-advantages__icon">
+								<img src="img/advantages/icon-6.svg" alt="">
+							</div>
+							<div class="item-advantages__content">
+								<div class="item-advantages__number">
+									<span class="item-advantages__quantity">3 000</span>
+								</div>
+								<div class="item-advantages__text item-advantages__text_3000">
+									конструкций по&nbsp;всей&nbsp;России
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="application">
+				<div class="application__container">
+					<div class="application__body">
+						<div class="application__info">
+							<h2 class="application__title">
+								<span class="text-yellow">Самые разные</span> области применения
+							</h2>
+							<div class="application__text">
+								<p>Мы применяем уникальную систему потолочных треков, парковочных зон и роликов. Все это обеспечивает плавное и абсолютно бесшумное перемещение панелей.</p>
+								<p>
+									Раздвижные перегородки и стены изготавливаются на заказ в зависимости от типа помещения и индивидуальных требований заказчика.
+								</p>
+							</div>
+							<a href="#" class="application__button orange-button _icon-arrow-right">
+								Перейти в раздел проектов
+							</a>
+						</div>
+						<div class="application__slider">
+							<div class="slider-container">
+								<div class="slider-wrapper">
+									<div class="application__item item-application">
+										<div class="item-application__img">
+											<img src="img/application/1.jpg" alt="">
+										</div>
+										<div class="item-application__body" data-swiper-parallax-opacity="0" >
+											<div class="item-application__content">
+												Спортивные клубы
+											</div>
+										</div>
+									</div>
+									<div class="application__item item-application">
+										<div class="item-application__img">
+											<img src="img/application/2.jpg" alt="">
+										</div>
+										<div class="item-application__body" data-swiper-parallax-opacity="0">
+											<div class="item-application__content">
+												Детские сады
+											</div>
+										</div>
+									</div>
+									<div class="application__item item-application">
+										<div class="item-application__img">
+											<img src="img/application/3.jpg" alt="">
+										</div>
+										<div class="item-application__body" data-swiper-parallax-opacity="0">
+											<div class="item-application__content">
+												Конференц-залы
+											</div>
+										</div>
+									</div>
+									<div class="application__item item-application">
+										<div class="item-application__img">
+											<img src="img/application/4.jpg" alt="">
+										</div>
+										<div class="item-application__body" data-swiper-parallax-opacity="0">
+											<div class="item-application__content">
+												Рестораны
+											</div>
+										</div>
+									</div>
+									<div class="application__item item-application">
+										<div class="item-application__img">
+											<img src="img/application/5.jpg" alt="">
+										</div>
+										<div class="item-application__body" data-swiper-parallax-opacity="0">
+											<div class="item-application__content">
+												Отели
+											</div>
+										</div>
+									</div>
+									<div class="application__item item-application">
+										<div class="item-application__img">
+											<img src="img/application/6.jpg" alt="">
+										</div>
+										<div class="item-application__body" data-swiper-parallax-opacity="0">
+											<div class="item-application__content">
+												Офисы
+											</div>
+										</div>
+									</div>
+									<div class="application__item item-application">
+										<div class="item-application__img">
+											<img src="img/application/7.jpg" alt="">
+										</div>
+										<div class="item-application__body" data-swiper-parallax-opacity="0">
+											<div class="item-application__content">
+												Танцевальные школы
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-scrollbar">
+									<div class="swiper-scrollbar-drag"></div>
+								</div>
+							</div>
+							<div class="application__value">
+								+ <span class="application__number">6</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="sales">
+				<div class="sales__container">
+					<div class="sales__body">
+						<div class="sales__image">
+							<img src="img/sales/sale.png" alt="">
+						</div>
+						<div class="sales__content">
+							<h2 class="sales__title common-title">
+								А может хотите
+								<span class="text-yellow">персональную скидку</span>
+								специально для вас?
+							</h2>
+							<div class="sales__text">
+								<p>Оставьте заявку и наши специалисты свяжутся с вами в ближайшее время для обсуждения всех деталей спецпредложения специально для вас.
+								</p>
+								<p class="text-semibold">Для начала, давайте определимся, к какому типу клиентов вы себя относите :)
+								</p>
+							</div>
+							<div class="sales__choice choice-sale">
+								<div class="choice-sale__item">
+									<select name="status" class="form__select">
+										<option value="owner" selected>Собственник</option>
+										<option value="owner-2">Собственник 2</option>
+										<option value="owner-3">Собственник 3</option>
+									</select>
+								</div>
+								<a href="#" class="choice-sale__link _icon-arrow-right"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		@@include('html/footer.html',{})
+
+	</div>
+
+	@@include('html/js.html',{})
+</body>
+</html>

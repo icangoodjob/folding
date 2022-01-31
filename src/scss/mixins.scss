@@ -1,0 +1,102 @@
+// МИКСИНЫ />======================================================
+// БРЕЙКПОИНТЫ
+$grid-breakpoints: (
+  xs: 420px,
+  sm: 459.98px,
+  md: 767px,
+  lg: 991px,
+  xl: 1200px,
+  xxl: 1400px
+  ) !default;
+// Медиа выражение
+@mixin media($width){
+  @media screen and (max-width: $width){
+    @content;
+  }
+}
+// Контрольная точка 
+// Применение: @include bp(xs/sm/md/lg/xl/xxl/) {}
+@mixin bp($name){
+  $width: map-get($grid-breakpoints, $name);
+  @include media($width) {
+    @content;
+  }
+}
+
+// 12-ТИ КОЛОНОЧНАЯ СЕТКА 
+// Применение: @include col(6)
+$grid-columns: 12 !default;
+@mixin col($size: false, $columns: $grid-columns) {
+  @if $size {
+    flex: 0 0 auto;
+    width: percentage($size / $columns);
+  } @else {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+}
+
+// АДАПТИВНОЕ СВОЙСТВО
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    //Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media screen and (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  } @else if $type==2 {
+    //Только если больше контейнера
+    #{$property}: $startSize + px;
+    @media screen and (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+  } @else {
+    //Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+  }
+}
+
+// НОВОЕ АДАПТИВНОЕ СВОСТВО
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+  @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+    $widthFrom: $maxWidth;
+  }
+  @if ($minSize <= 0) {
+    $minSize: 0.0001;
+  }
+  @if ($startSize <= 0) {
+    $startSize: 0.0001;
+  }
+
+  // Брейк-поинты в EM
+  $widthFromMedia: em($widthFrom);
+  $widthToMedia: em($widthTo);
+
+  // Формула плавающего значения
+  // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+  $yIntersection: -$widthTo * $slope + $minSize;
+  $flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+
+  // Получение значения свойства
+  $propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
+  // Если отрицательные значения
+  @if ($minSize > $startSize) {
+    $propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
+  }
+
+  @if $widthFrom == $containerWidth or $widthFrom == $maxWidth or $keepSize == 1 or $keepSize == 2 {
+    @media (min-width: $widthFromMedia) {
+      #{$property}: rem($startSize);
+    }
+  }
+  @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+    #{$property}: $propertyValue;
+  }
+  @if $widthTo == $minWidth or $keepSize == 1 or $keepSize == 3 {
+    @media (max-width: $widthToMedia) {
+      #{$property}: rem($minSize);
+    }
+  }
+}

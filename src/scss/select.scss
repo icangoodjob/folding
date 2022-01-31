@@ -1,0 +1,67 @@
+.select {
+	position: relative;
+}
+.select__item {
+	position: relative;
+}
+.select__title {
+	color: $mainColor;
+	background: rgba(37, 45, 53, 0.1);
+	cursor: pointer;
+}
+.select__value {
+	display: flex;
+	font-size: 16px;
+	line-height: 125%;
+	min-height: 50px;
+	padding: 11px 11px 10px 40px;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row-reverse;
+	color: $mainColor;
+	font-weight: 600;
+}
+.select__value span {
+	// height: 1em;
+	// overflow: hidden;
+	// display: -webkit-box;
+	// -webkit-line-clamp: 1;
+	// -webkit-box-orient: vertical;
+}
+.select__value::before {
+	content: "";
+	display: inline-block;
+	transition: all 0.3s ease 0s;
+	width: 20px;
+	height: 12px;
+	background: url("../img/icons/arrow-down.svg") center / 100% no-repeat;
+}
+.select__options {
+	color: #000;
+	display: none;
+	position: absolute;
+	top:100%;
+	border-radius: 0 0 4px 4px;
+	min-width: 100%;
+	left: 0;
+	background-color: #fff;
+	border-top: 0;
+	border: 1px solid #d9d9d9;
+	border-top: 0;
+	font-size: 16px;
+	padding: 0px 0px 5px 0px;
+}
+.select__option {
+	cursor: pointer;
+	padding: 10px 20px;
+	margin: 0px 0px 0px 0px;
+}
+.select._active {
+	z-index: 5;
+}
+.select._active .select__value::before {
+	transform: rotate(-180deg);
+}
+.select._active.select__options {
+	display: block;
+}
